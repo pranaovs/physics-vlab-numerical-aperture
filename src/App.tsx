@@ -60,7 +60,7 @@ function App() {
                   }}
                 >
                   <span className="absolute -top-2.5 left-1/2 transform -translate-x-1/2 text-sm text-slate-400">
-                      {diameter >= 1 ? `${diameter} cm` : diameter}
+                    {diameter >= 1 ? `${diameter} cm` : diameter}
                   </span>
                 </div>
               ))}
@@ -123,6 +123,23 @@ function App() {
                   onChange={(e) => handleCladdingIndexChange(parseFloat(e.target.value))}
                   className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer"
                 />
+              </div>
+
+              <div className="bg-slate-900 rounded-lg p-4">
+                <p className="text-slate-400 mb-1">Side View</p>
+                <div className="relative h-32 bg-slate-800 rounded-lg overflow-hidden">
+                  {/* Laser source */}
+                  <div className="absolute top-1/2 left-2 w-4 h-4 bg-red-500 rounded-full transform -translate-y-1/2 shadow-[0_0_15px_rgba(239,68,68,0.7)]" />
+
+                  {/* Screen */}
+                  <div
+                    className="absolute top-1/2 w-1 h-24 bg-slate-400 transform -translate-y-1/2"
+                    style={{
+                      left: `${4 + distance*18.75}%`, // Adjust the position based on the distance
+                    }}
+                  />
+                </div>
+
               </div>
               <div className="bg-slate-900 rounded-lg p-4">
                 <p className="text-slate-400 mb-1">Ring Diameter (W)</p>
