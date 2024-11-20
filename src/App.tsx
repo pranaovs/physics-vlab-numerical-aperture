@@ -50,17 +50,17 @@ function App() {
           <div className="lg:col-span-2 bg-slate-800 rounded-xl p-6 relative">
             <div className="aspect-square w-full relative bg-slate-950 rounded-lg overflow-hidden">
               {/* Reference rings */}
-              {[0.5, 1, 1.5, 2, 2.5, 3].map((diameter) => (
+              {[0.5 , 1 , 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6].map((diameter) => (
                 <div
                   key={diameter}
                   className="absolute top-1/2 left-1/2 border border-slate-700 rounded-full transform -translate-x-1/2 -translate-y-1/2"
                   style={{
-                    width: `${diameter * 60}px`,
-                    height: `${diameter * 60}px`,
+                    width: `${diameter * 100}px`,
+                    height: `${diameter * 100}px`,
                   }}
                 >
-                  <span className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-sm text-slate-400">
-                    {diameter} cm
+                  <span className="absolute -top-2.5 left-1/2 transform -translate-x-1/2 text-sm text-slate-400">
+                      {diameter >= 1 ? `${diameter} cm` : diameter}
                   </span>
                 </div>
               ))}
@@ -69,8 +69,8 @@ function App() {
               <div
                 className="absolute top-1/2 left-1/2 border-2 border-red-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_rgba(239,68,68,0.5)]"
                 style={{
-                  width: `${laserDiameter * 60}px`,
-                  height: `${laserDiameter * 60}px`,
+                  width: `${laserDiameter * 100}px`,
+                  height: `${laserDiameter * 100}px`,
                 }}
               />
 
