@@ -50,7 +50,7 @@ function App() {
           <div className="lg:col-span-2 bg-slate-800 rounded-xl p-6 relative">
             <div className="aspect-square w-full relative bg-slate-950 rounded-lg overflow-hidden">
               {/* Reference rings */}
-              {[0.5 , 1 , 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6].map((diameter) => (
+              {[0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6].map((diameter) => (
                 <div
                   key={diameter}
                   className="absolute top-1/2 left-1/2 border border-slate-700 rounded-full transform -translate-x-1/2 -translate-y-1/2"
@@ -126,18 +126,20 @@ function App() {
               </div>
 
               <div className="bg-slate-900 rounded-lg p-4">
-                <p className="text-slate-400 mb-1">Side View</p>
-                <div className="relative h-32 bg-slate-800 rounded-lg overflow-hidden">
-                  {/* Laser source */}
-                  <div className="absolute top-1/2 left-2 w-4 h-4 bg-red-500 rounded-full transform -translate-y-1/2 shadow-[0_0_15px_rgba(239,68,68,0.7)]" />
 
-                  {/* Screen */}
-                  <div
-                    className="absolute top-1/2 w-1 h-24 bg-slate-400 transform -translate-y-1/2"
-                    style={{
-                      left: `${4 + distance*18.75}%`, // Adjust the position based on the distance
-                    }}
-                  />
+
+                <div className="bg-slate-900 rounded-lg p-4">
+                  <p className="text-slate-400 mb-1">Side View</p>
+                  <div className="relative h-32 bg-slate-800 rounded-lg overflow-hidden flex items-center">
+                    {/* Laser source */}
+                    <div className="w-4 h-4 bg-red-500 rounded-full shadow-[0_0_15px_rgba(239,68,68,0.7)]" />
+
+                    {/* Spacer */}
+                    <div style={{ flex: distance }} />
+
+                    {/* Screen */}
+                    <div className="w-1 h-24 bg-slate-400" />
+                  </div>
                 </div>
 
               </div>
