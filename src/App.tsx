@@ -21,6 +21,12 @@ function App() {
 
   const laserDiameter = calculateDiameter(distance);
 
+  const handleCladdingIndexChange = (value: number) => {
+    if (value <= coreIndex) {
+      setCladdingIndex(value);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-900 text-white p-8">
       <div className="max-w-6xl mx-auto">
@@ -105,10 +111,10 @@ function App() {
                 <input
                   type="range"
                   min="1.4"
-                  max="1.6"
+                  max={coreIndex}
                   step="0.01"
                   value={claddingIndex}
-                  onChange={(e) => setCladdingIndex(parseFloat(e.target.value))}
+                  onChange={(e) => handleCladdingIndexChange(parseFloat(e.target.value))}
                   className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer"
                 />
               </div>
