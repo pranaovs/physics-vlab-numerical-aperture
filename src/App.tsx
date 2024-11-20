@@ -86,24 +86,6 @@ function App() {
             <h2 className="text-xl font-semibold mb-4">Measurements</h2>
             <div className="space-y-4">
               <div className="bg-slate-900 rounded-lg p-4">
-                <p className="text-slate-400 mb-1">Ring Diameter (W)</p>
-                <p className="text-2xl font-bold">{laserDiameter.toFixed(3)} cm</p>
-              </div>
-              <div className="bg-slate-900 rounded-lg p-4">
-                <p className="text-slate-400 mb-1">Distance (L)</p>
-                <p className="text-2xl font-bold">{distance.toFixed(3)} cm</p>
-              </div>
-              <div className="bg-slate-900 rounded-lg p-4">
-                <p className="text-slate-400 mb-1">Numerical Aperture (NA) = Ring Diameters (W) / Distance (L)</p>
-                <p className="text-2xl font-bold">{laserDiameter.toFixed(3)}/{distance.toFixed(3)} = {NA.toFixed(3)}</p>
-              </div>
-              <div className="bg-slate-900 rounded-lg p-4">
-                <p className="text-slate-400 mb-1">Acceptance Angle (θ) = <Latex>$\sin^-$</Latex>  (NA)</p>
-                <p className="text-2xl font-bold">
-                  <Latex>$\sin^-$0.530</Latex> = {(Math.asin(NA) * (180 / Math.PI)).toFixed(2)}°
-                </p>
-              </div>
-              <div className="bg-slate-900 rounded-lg p-4">
                 <p className="text-slate-400 mb-1">Core Refractive Index</p>
                 <p className="text-2xl font-bold">{coreIndex.toFixed(3)}</p>
                 <input
@@ -128,6 +110,24 @@ function App() {
                   onChange={(e) => setCladdingIndex(parseFloat(e.target.value))}
                   className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer"
                 />
+              </div>
+              <div className="bg-slate-900 rounded-lg p-4">
+                <p className="text-slate-400 mb-1">Ring Diameter (W)</p>
+                <p className="text-2xl font-bold">{laserDiameter.toFixed(3)} cm</p>
+              </div>
+              <div className="bg-slate-900 rounded-lg p-4">
+                <p className="text-slate-400 mb-1">Distance (L)</p>
+                <p className="text-2xl font-bold">{distance.toFixed(3)} cm</p>
+              </div>
+              <div className="bg-slate-900 rounded-lg p-4">
+                <p className="text-slate-400 mb-1">Numerical Aperture (NA) = Ring Diameters (W) / Distance (L)</p>
+                <p className="text-2xl font-bold">{laserDiameter.toFixed(3)}/{distance.toFixed(3)} = {NA.toFixed(3)}</p>
+              </div>
+              <div className="bg-slate-900 rounded-lg p-4">
+                <p className="text-slate-400 mb-1">Acceptance Angle (θ) = <Latex>$\sin^-$</Latex>  (NA)</p>
+                <p className="text-2xl font-bold">
+                  <Latex>$\sin^-$0.530</Latex> = {(Math.asin(NA) * (180 / Math.PI)).toFixed(2)}°
+                </p>
               </div>
             </div>
           </div>
