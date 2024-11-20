@@ -8,14 +8,15 @@ function App() {
   const [distance, setDistance] = useState(2.5);
   const [coreIndex, setCoreIndex] = useState(1.48);
   const [claddingIndex, setCladdingIndex] = useState(1.46);
-  const NA = 0.53;
+
+  const calculateNA = (core: number, cladding: number) => {
+    return Math.sqrt(Math.pow(core, 2) - Math.pow(cladding, 2));
+  };
+
+  const NA = calculateNA(coreIndex, claddingIndex);
 
   const calculateDiameter = (L: number) => {
     return Math.sqrt((2 * NA * L) / (1 - Math.pow(NA, 2)));
-  };
-
-  const calculateNA = (W: number, L: number) => {
-    return W / Math.sqrt(4 * Math.pow(L, 2) + Math.pow(W, 2));
   };
 
   const laserDiameter = calculateDiameter(distance);
@@ -120,13 +121,13 @@ function App() {
                 <p className="text-2xl font-bold">{distance.toFixed(3)} cm</p>
               </div>
               <div className="bg-slate-900 rounded-lg p-4">
-                <p className="text-slate-400 mb-1">Numerical Aperture (NA) = Ring Diameters (W) / Distance (L)</p>
-                <p className="text-2xl font-bold">{laserDiameter.toFixed(3)}/{distance.toFixed(3)} = {NA.toFixed(3)}</p>
+                <p className="text-slate-400 mb-1">Numerical Aperture (NA) = sqrt(coreIndex^2 - claddingIndex^2)</p>
+                <p className="text-2xl font-bold">{NA.toFixed(3)}</p>
               </div>
               <div className="bg-slate-900 rounded-lg p-4">
                 <p className="text-slate-400 mb-1">Acceptance Angle (θ) = <Latex>$\sin^-$</Latex>  (NA)</p>
                 <p className="text-2xl font-bold">
-                  <Latex>$\sin^-$0.530</Latex> = {(Math.asin(NA) * (180 / Math.PI)).toFixed(2)}°
+                  <Latex>$\sin^-$ {NA.toFixed(3)}</Latex> = {(Math.asin(NA) * (180 / Math.PI)).toFixed(2)}°
                 </p>
               </div>
             </div>
