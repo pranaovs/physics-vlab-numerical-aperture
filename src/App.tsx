@@ -126,23 +126,19 @@ function App() {
               </div>
 
               <div className="bg-slate-900 rounded-lg p-4">
+                <p className="text-slate-400 mb-1">Side View</p>
+                <div className="relative h-32 bg-slate-800 rounded-lg overflow-hidden flex items-center px-4">
+                  {/* Laser source */}
+                  <div className="w-4 h-4 bg-red-500 rounded-full shadow-[0_0_15px_rgba(239,68,68,0.7)]" />
 
+                  {/* Spacer */}
+                  <div style={{ flex: distance / 5 }} />
 
-                <div className="bg-slate-900 rounded-lg p-4">
-                  <p className="text-slate-400 mb-1">Side View</p>
-                  <div className="relative h-32 bg-slate-800 rounded-lg overflow-hidden flex items-center px-4">
-                    {/* Laser source */}
-                    <div className="w-4 h-4 bg-red-500 rounded-full shadow-[0_0_15px_rgba(239,68,68,0.7)]" />
-
-                    {/* Spacer */}
-                    <div style={{ flex: distance / 5 }} />
-
-                    {/* Screen */}
-                    <div className="w-1 h-24 bg-slate-400" />
-                  </div>
+                  {/* Screen */}
+                  <div className="w-1 h-24 bg-slate-400" />
                 </div>
-
               </div>
+
               <div className="bg-slate-900 rounded-lg p-4">
                 <p className="text-slate-400 mb-1">Ring Diameter (W)</p>
                 <p className="text-2xl font-bold">{laserDiameter.toFixed(3)} cm</p>
