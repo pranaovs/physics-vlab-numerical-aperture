@@ -135,7 +135,7 @@ function App() {
                     <div className="w-4 h-4 bg-red-500 rounded-full shadow-[0_0_15px_rgba(239,68,68,0.7)]" />
 
                     {/* Spacer */}
-                    <div style={{ flex: distance }} />
+                    <div style={{ flex: distance / 5 }} />
 
                     {/* Screen */}
                     <div className="w-1 h-24 bg-slate-400" />
