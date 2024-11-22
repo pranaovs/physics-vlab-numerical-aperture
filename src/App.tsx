@@ -36,6 +36,10 @@ function App() {
     <div className="min-h-screen bg-slate-900 text-white p-8">
       <div className="max-w-6xl mx-auto">
         <header className="mb-8 text-center">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <img src="path/to/college-logo.png" alt="College Logo" className="w-12 h-12" />
+            <p className="text-xl font-semibold">Your College Name</p>
+          </div>
           <h1 className="text-3xl font-bold mb-2 flex items-center justify-center gap-2">
             <Microscope className="w-8 h-8" />
             Optical Fiber Numerical Aperture Experiment
