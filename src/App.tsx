@@ -78,6 +78,37 @@ function App() {
               <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-red-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_15px_rgba(239,68,68,0.7)]" />
             </div>
 
+            <div className="mt-6 grid grid-cols-2 gap-4">
+              <div>
+                <label className="flex items-center gap-2 text-slate-300 mb-2">
+                  Core Refractive Index: {coreIndex.toFixed(3)}
+                </label>
+                <input
+                  type="range"
+                  min="1.2"
+                  max="1.65"
+                  step="0.01"
+                  value={coreIndex}
+                  onChange={(e) => handleCoreIndexChange(parseFloat(e.target.value))}
+                  className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer"
+                />
+              </div>
+              <div>
+                <label className="flex items-center gap-2 text-slate-300 mb-2">
+                  Cladding Refractive Index: {claddingIndex.toFixed(3)}
+                </label>
+                <input
+                  type="range"
+                  min="1.2"
+                  max="1.65"
+                  step="0.01"
+                  value={claddingIndex}
+                  onChange={(e) => handleCladdingIndexChange(parseFloat(e.target.value))}
+                  className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer"
+                />
+              </div>
+            </div>
+
             <div className="mt-6">
               <label className="flex items-center gap-2 text-slate-300 mb-2">
                 <Ruler className="w-5 h-5" />
@@ -99,33 +130,6 @@ function App() {
             <h2 className="text-xl font-semibold mb-4">Measurements</h2>
             <div className="space-y-4">
               <div className="bg-slate-900 rounded-lg p-4">
-                <p className="text-slate-400 mb-1">Core Refractive Index</p>
-                <p className="text-2xl font-bold">{coreIndex.toFixed(3)}</p>
-                <input
-                  type="range"
-                  min="1.2"
-                  max="1.65"
-                  step="0.01"
-                  value={coreIndex}
-                  onChange={(e) => handleCoreIndexChange(parseFloat(e.target.value))}
-                  className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer"
-                />
-              </div>
-              <div className="bg-slate-900 rounded-lg p-4">
-                <p className="text-slate-400 mb-1">Cladding Refractive Index</p>
-                <p className="text-2xl font-bold">{claddingIndex.toFixed(3)}</p>
-                <input
-                  type="range"
-                  min="1.2"
-                  max="1.65"
-                  step="0.01"
-                  value={claddingIndex}
-                  onChange={(e) => handleCladdingIndexChange(parseFloat(e.target.value))}
-                  className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer"
-                />
-              </div>
-
-              <div className="bg-slate-900 rounded-lg p-4">
                 <p className="text-slate-400 mb-1">Side View</p>
                 <div className="relative h-32 bg-slate-800 rounded-lg overflow-hidden flex items-center px-4">
                   {/* Laser source */}
@@ -138,7 +142,6 @@ function App() {
                   <div className="w-1 h-24 bg-slate-400" />
                 </div>
               </div>
-
               <div className="bg-slate-900 rounded-lg p-4">
                 <p className="text-slate-400 mb-1">Ring Diameter (W)</p>
                 <p className="text-2xl font-bold">{laserDiameter.toFixed(3)} cm</p>
