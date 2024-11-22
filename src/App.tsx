@@ -53,13 +53,13 @@ function App() {
               {[0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6].map((diameter) => (
                 <div
                   key={diameter}
-                  className="absolute top-1/2 left-1/2 border border-slate-700 rounded-full transform -translate-x-1/2 -translate-y-1/2"
+                  className="absolute top-1/2 left-1/2 border-2 border-slate-500 rounded-full transform -translate-x-1/2 -translate-y-1/2"
                   style={{
                     width: `${diameter * 100}px`,
                     height: `${diameter * 100}px`,
                   }}
                 >
-                  <span className="absolute -top-2.5 left-1/2 transform -translate-x-1/2 text-sm text-slate-400">
+                  <span className="absolute -top-2.5 left-1/2 transform -translate-x-1/2 font-bold text-sm text-slate-400">
                     {diameter >= 1 ? `${diameter} cm` : diameter}
                   </span>
                 </div>
@@ -67,7 +67,7 @@ function App() {
 
               {/* Laser ring */}
               <div
-                className="absolute top-1/2 left-1/2 border-2 border-red-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_rgba(239,68,68,0.5)]"
+                className="absolute top-1/2 left-1/2 border-4 border-red-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_rgba(239,68,68,0.5)]"
                 style={{
                   width: `${laserDiameter * 100}px`,
                   height: `${laserDiameter * 100}px`,
