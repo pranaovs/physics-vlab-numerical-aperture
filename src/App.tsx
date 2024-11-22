@@ -150,10 +150,7 @@ function App() {
                 <p className="text-2xl font-bold">{distance.toFixed(3)} cm</p>
               </div>
               <div className="bg-slate-900 rounded-lg p-4">
-
                 <p className="text-slate-400 mb-1">Numerical Aperture (NA) = <InlineMath math="\frac{W}{\sqrt{4L^2 + W^2}}" /></p>
-                <p className="text-2xl font-bold">
-                </p>
                 <p className="text-2xl font-bold">{NA.toFixed(3)}</p>
               </div>
               <div className="bg-slate-900 rounded-lg p-4">
@@ -162,6 +159,37 @@ function App() {
                   <InlineMath math={`\\sin^{-1}(${NA.toFixed(3)})`} /> = {(Math.asin(NA) * (180 / Math.PI)).toFixed(2)}°
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 flex justify-between items-center text-slate-400">
+          <div className="text-left">
+            <h3 className="text-lg font-semibold mb-4">Guidance from</h3>
+            <div className="flex gap-4">
+              <a href="mailto:mentor@example.com" className="flex flex-col items-center">
+                <span>Mentor</span>
+              </a>
+            </div>
+          </div>
+          <div className="text-right">
+            <h3 className="text-lg font-semibold mb-4">Made by</h3>
+            <div className="flex gap-4">
+              {[
+                { name: 'Alice', email: 'alice@example.com', imgSrc: 'path/to/alice.jpg' },
+                { name: 'Bob', email: 'bob@example.com', imgSrc: 'path/to/bob.jpg' },
+                { name: 'Charlie', email: 'charlie@example.com', imgSrc: 'path/to/charlie.jpg' },
+                { name: 'Dana', email: 'dana@example.com', imgSrc: 'path/to/dana.jpg' },
+              ].map((person) => (
+                <a key={person.email} href={`mailto:${person.email}`} className="flex flex-col items-center">
+                  <img
+                    src={person.imgSrc}
+                    alt={person.name}
+                    className="w-12 h-12 rounded-full mb-2"
+                  />
+                  <span>{person.name}</span>
+                </a>
+              ))}
             </div>
           </div>
         </div>
