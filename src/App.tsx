@@ -191,10 +191,10 @@ function App() {
             <h3 className="text-lg font-semibold mb-4">Made by</h3>
             <div className="flex gap-4">
               {[
-                { name: 'Alice', email: 'alice@example.com', imgSrc: 'path/to/alice.jpg' },
-                { name: 'Bob', email: 'bob@example.com', imgSrc: 'path/to/bob.jpg' },
-                { name: 'Charlie', email: 'charlie@example.com', imgSrc: 'path/to/charlie.jpg' },
-                { name: 'Dana', email: 'dana@example.com', imgSrc: 'path/to/dana.jpg' },
+                { name: 'Ashraf Syed', email: 'ashraf24110498@snuchennai.edu.in', imgSrc: './src/images/ashraf.jpg' },
+                { name: 'Rammohan M', email: 'rammohan24110472@snuchennai.edu.in', imgSrc: './src/images/ram.jpg' },
+                { name: 'Tejas Kotte Reddy', email: 'tejasreddy24110496@snuchennai.edu.in', imgSrc: './src/images/tejas.jpg' },
+                { name: 'Pranaov S', email: 'pranaov24110409@snuchennai.edu.in', imgSrc: './src/images/pranaov.jpg' },
               ].map((person) => (
                 <a key={person.email} href={`mailto:${person.email}`} className="flex flex-col items-center">
                   <img
