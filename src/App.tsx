@@ -182,7 +182,7 @@ function App() {
           <div className="text-left">
             <h3 className="text-lg font-semibold mb-4">Guidance from</h3>
             <div className="flex gap-4">
-              <a href="mailto:mentor@example.com" className="flex flex-col items-center">
+              <a href="mailto:rajeshnp@snuchennai.edu.in" className="flex flex-col items-center">
                 <span>Dr. N.P. Rajesh</span>
               </a>
             </div>
