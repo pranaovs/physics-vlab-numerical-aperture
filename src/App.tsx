@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Ruler, Microscope } from 'lucide-react';
-
 import 'katex/dist/katex.min.css';
-import Latex from 'react-latex-next';
+import { BlockMath, InlineMath } from 'react-katex';
 
 function App() {
   const [distance, setDistance] = useState(2.5);
@@ -151,13 +150,16 @@ function App() {
                 <p className="text-2xl font-bold">{distance.toFixed(3)} cm</p>
               </div>
               <div className="bg-slate-900 rounded-lg p-4">
-                <p className="text-slate-400 mb-1">Numerical Aperture (NA) = sqrt(coreIndex^2 - claddingIndex^2)</p>
+
+                <p className="text-slate-400 mb-1">Numerical Aperture (NA) = <InlineMath math="\frac{W}{\sqrt{4L^2 + W^2}}" /></p>
+                <p className="text-2xl font-bold">
+                </p>
                 <p className="text-2xl font-bold">{NA.toFixed(3)}</p>
               </div>
               <div className="bg-slate-900 rounded-lg p-4">
-                <p className="text-slate-400 mb-1">Acceptance Angle (θ) = <Latex>$\sin^-$</Latex>  (NA)</p>
+                <p className="text-slate-400 mb-1">Acceptance Angle (θ) = <InlineMath math="\sin^{-1}(\text{NA})" /></p>
                 <p className="text-2xl font-bold">
-                  <Latex>$\sin^-$ {NA.toFixed(3)}</Latex> = {(Math.asin(NA) * (180 / Math.PI)).toFixed(2)}°
+                  <InlineMath math={`\\sin^{-1}(${NA.toFixed(3)})`} /> = {(Math.asin(NA) * (180 / Math.PI)).toFixed(2)}°
                 </p>
               </div>
             </div>
