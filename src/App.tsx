@@ -42,8 +42,8 @@ function App() {
       <div className="max-w-6xl mx-auto">
         <header className="mb-8 text-center relative">
           <div className="flex items-center justify-center gap-4 mb-4">
-            <img src="path/to/college-logo.png" alt="College Logo" className="w-12 h-12" />
-            <p className="text-xl font-semibold">Your College Name</p>
+            <img src="./src/images/snu.jpg" alt="College Logo" className="h-12" />
+            <p className="text-xl font-semibold">Shiv Nadar University Chennai</p>
           </div>
           <h1 className="text-3xl font-bold mb-2 flex items-center justify-center gap-2">
             <Microscope className="w-8 h-8" />
@@ -183,7 +183,7 @@ function App() {
             <h3 className="text-lg font-semibold mb-4">Guidance from</h3>
             <div className="flex gap-4">
               <a href="mailto:mentor@example.com" className="flex flex-col items-center">
-                <span>Mentor</span>
+                <span>Dr. N.P. Rajesh</span>
               </a>
             </div>
           </div>
